@@ -1,3 +1,3 @@
 public interface Fetch {
-    void fetch();
+    void Fetch();
 }

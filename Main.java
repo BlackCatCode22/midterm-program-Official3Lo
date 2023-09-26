@@ -1,74 +1,44 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Main {
-    public static void main(String[] main){
-        System.out.println("Welcome to my Animal Program");
+    public static void main(String[] args) {
+        System.out.println("Welcome to Animal zoo program");
+        //call the static method to create a list of names
+        Hyena.myListofHyenaNames();
 
-        //animal counter
-        System.out.println("Before we use 'new...'" + "We have: " + Animal.numOfAnimals ); //reference a static attribute(field of animal class)
+        //look at animalnames
+        //call inputHyenaNames
+        Hyena.inputHyenaNames();
 
-        Animal myAnimal = new Animal();
-        myAnimal.name = "goblin";
+        //create animal
+        Animal animal1 = new Animal();
+        animal1.name = "Goblin";
+        animal1.makeNoise();
+        //animal count
+        System.out.println("You have " + animal1.getNumOfAnimals()+ " animals.");
 
-        System.out.println("Name of my new animal specie is: " + myAnimal.name);
+        //new hyena
+        Hyena hyena1 = new Hyena();
+        hyena1.laugh();
+        hyena1.Fetch();
+        System.out.println("You have " + animal1.getNumOfAnimals()+ " animals.");
+        System.out.println("\nYou have " + hyena1.getNumOfHyenas() + " hyena."); //error printing two hyena
 
-
-        //create hyena
-        Hyena myHyena = new Hyena();
-        Hyena hyenaTwo = new Hyena();
-        Hyena hyenaThree = new Hyena();
-
-        //hyena counter
-        System.out.println("We have: " + Hyena.numOfHyena + " hyenas.");
-
-        //hyena name
-        myHyena.name = "Suzy";
-        System.out.println("My new hyena's name is: " + myHyena.name);
-
-        //hyena age
-        myHyena.age = 2;
-
-        //hyena sound
-        myHyena.makeNoise();
-        myHyena.laugh(); //unique
-        myHyena.lol = "HEE HEE HEE";
-        System.out.println("Name of my new animal specie is: " + myHyena.lol);
-
-        //the house
-        myHyena.hyenaHouse = "Savanna";
-
-
-        //
-        myHyena.fetch(); //inheritance
+        Hyena anotherHyena = new Hyena();
+        System.out.println("You have " + animal1.getNumOfAnimals()+ " animals.");
+        System.out.println("\nYou have " + anotherHyena.getNumOfHyenas() + " hyena."); //error printing two hyena
 
     }
 }
 
-
 /*
-born stats
-physical stats
-environment stats
-
-public static numofanimals
-public class hyena from animal class
-public class animal
-public makenoise
-
-create animal
-different and unique each animal
-
- increment static animal count
- animal.numOfAnimals++;
-
-fill object data field
-anyoldanimal.desc = myArray [0]
-
+public protected and private
  */
 
 /*
-java programmer exclude multiple inheritance
-attribute a field describe object eg name, age
-cat class is subclass to main
-multiple inheritance nmi -> cat and dogs ->(no) cog ambiguous
-interface - a contract requirement before using?
-must be declare abstract class to use implement fetch
+
  */

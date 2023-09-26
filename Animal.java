@@ -1,23 +1,23 @@
-public class Animal {
-    public static int numOfAnimals = 0;
-
-    //create a constructor
-    public Animal(){ //new animal how code work before this
-        numOfAnimals++;//incrament
+public class Animal {// implementation (parent class) // You can define properties and methods common to all animals here.
+    private static int numOfAnimals = 0;
+    //create a getter
+    //What type of method is this? is it static and belong to class or..
+    //is this method used with objects
+    public int getNumOfAnimals(){
+        return numOfAnimals;
     }
-
+    public Animal() {
+        System.out.println("new animal is created.");
+    numOfAnimals++;
+}
     String name;
-    String birthSeason;
-    String color;
     int age;
-
-    //String diet;
+    String specie;
+    String birthday;
+    String origin1;
+    String origin2;
 
     public void makeNoise(){
-        System.out.print("roar");
+        System.out.println("*Noise*");
     }
-    public String makeNoise02(){
-        return "This is a String return from a method in my animal class";
-    }
-
 }
