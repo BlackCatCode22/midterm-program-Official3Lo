@@ -1,44 +1,50 @@
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
+import java.io.*;
 
-public class Main {
-    public static void main(String[] args) {
-        System.out.println("Welcome to Animal zoo program");
-        //call the static method to create a list of names
-        Hyena.myListofHyenaNames();
+import static java.lang.System.in;
+//import java.
 
-        //look at animalnames
-        //call inputHyenaNames
-        Hyena.inputHyenaNames();
+public class Main {// create list of object and report
 
-        //create animal
-        Animal animal1 = new Animal();
-        animal1.name = "Goblin";
-        animal1.makeNoise();
-        //animal count
-        System.out.println("You have " + animal1.getNumOfAnimals()+ " animals.");
+    //creating the gen unique id access
+    public static String generateUniqueID(String theSpecies, int numOfSpecies) {
+        String prefix = "";
+        int suffix = numOfSpecies + 1;
+        if(theSpecies.contains("hyena")){
+            prefix = "Hy";
+        }
+        String newID = Main.generateUniqueID("Hyena", 8);
+        System.out.println("This is unique id"+ this.newID);
+        return prefix + Integer.valueOf(suffix);
+    }
 
-        //new hyena
-        Hyena hyena1 = new Hyena();
-        hyena1.laugh();
-        hyena1.Fetch();
-        System.out.println("You have " + animal1.getNumOfAnimals()+ " animals.");
-        System.out.println("\nYou have " + hyena1.getNumOfHyenas() + " hyena."); //error printing two hyena
+    public static void main(String[] args){
+        Animal anim1 = new Animal();
+        anim1.name1 = "goblin";
+        System.out.println("You got " + Animal.getNumOfAnimal() + " animals");
+        Scanner sc = new Scanner(in);
+        Hyena hy01 = new Hyena();
+        Hyena doggo = new Hyena();
+        //doggo.setAnimalID("hy09");
+        doggo.setColor();
+        doggo.setGender();
+        doggo.setBirthDate();
+        doggo.setWeight();
+        doggo.setArrivingFrom();
+        Hyena.generateRandomName();
+        System.out.println("This is doggo's ID: " + doggo.getAnimalID() + " hyena");
 
-        Hyena anotherHyena = new Hyena();
-        System.out.println("You have " + animal1.getNumOfAnimals()+ " animals.");
-        System.out.println("\nYou have " + anotherHyena.getNumOfHyenas() + " hyena."); //error printing two hyena
+
+        int currentNumOfHyena = Hyena.getNumOfHyena();
+                System.out.println("You got " + currentNumOfHyena + " hyena");
+
 
     }
 }
 
 /*
-public protected and private
- */
-
-/*
-
+generate unique id method and generator name method ?
+static method
+constructor
+initialize - give starting value
  */

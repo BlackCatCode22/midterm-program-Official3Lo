@@ -1,23 +1,93 @@
-public class Animal {// implementation (parent class) // You can define properties and methods common to all animals here.
-    private static int numOfAnimals = 0;
-    //create a getter
-    //What type of method is this? is it static and belong to class or..
-    //is this method used with objects
-    public int getNumOfAnimals(){
-        return numOfAnimals;
-    }
+public class Animal {
+    //getter
     public Animal() {
-        System.out.println("new animal is created.");
-    numOfAnimals++;
-}
-    String name;
-    int age;
-    String specie;
-    String birthday;
-    String origin1;
-    String origin2;
-
-    public void makeNoise(){
-        System.out.println("*Noise*");
+        numOfAnimal++;
     }
+
+    private static int numOfAnimal = 0;
+
+    public static int getNumOfAnimal() {
+        return numOfAnimal;
+    }
+
+    //Integers
+    String name1;
+    private String animalID;
+    private String animalName;
+    private int age;
+    private int animalAge;
+    private String birthDate;
+    private String color;
+    private float weight;
+    private char gender;
+    private String arrivingFrom;
+
+    //getter and setter
+    public void setAnimalID() {
+        this.animalID = animalID;
+    }
+
+    public String getAnimalID() {
+        return animalID;
+    }
+
+    public String getAnimalName() {
+        return animalName;
+    }
+    public void setAnimalName() {
+        this.animalName = animalName;
+    }
+
+    public String getBirthDate() {
+        return birthDate;
+    }
+    public void setBirthDate() {
+        this.birthDate = birthDate;
+    }
+
+    public String getColor() {
+        return color;
+    }
+    public void setColor() {
+        this.color = color;
+    }
+
+    public float getWeight() {
+        return weight;
+    }
+    public void setWeight() {
+        this.weight = weight;
+    }
+
+    public char getGender() {
+        return gender;
+    }
+    public void setGender() {
+        this.gender = gender;
+    }
+
+    public String getArrivingFrom() {
+        return arrivingFrom;
+    }
+    public void setArrivingFrom() {
+        this.arrivingFrom = arrivingFrom;
+    }
+    //unique id throw in specie and number id generator what static generate
+
+
 }
+/* parse-to make sense of / make all attributes private
+String to store Hy01
+name? animID
+animal name
+4 years old
+animalAge (current)
+calculate age
+age
+birthdate date
+color
+weight float how to handle unit weight
+gender char
+origin 1, 2, and 3 arriving from
+
+ */

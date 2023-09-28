@@ -1,60 +1,55 @@
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.nio.Buffer;
-import java.util.ArrayList;
-import java.util.Scanner;
-public class Hyena extends Animal implements Fetch {
-    public static List<String> myListofHyenaNames = new ArrayList<>();
+import java.util.*;
+import java.io.*;
 
-//Create a static number variable keep track of hyena
-private static int numOfHyenas = 0;//public static int numOfHyenas = 0;
-
-//constructor to keep track # of hyena
-public Hyena(){
-    System.out.println("a new hyena object is created");
-    numOfHyenas++;
-}
-
-//Write a getter
-public int getNumOfHyenas() {
-    return numOfHyenas;
-}
-String hyenaHouse;
-public void laugh(){
-    System.out.println("*heeheehee*");
-}
-
-    @Override
-    public void Fetch() {
-        System.out.println("i got stick.");
+public class Hyena extends Animal{
+    //getter
+    public Hyena(){
+        numOfHyena++;
     }
+    private static List<String> names;
+    private static int numOfHyena = 0;
+    public static int getNumOfHyena(){
 
-    //creates a method that inputs hyena names from a file name: animalnames.txt
-    public static void inputHyenaNames(){
-        String FilePath = "C:\\Users\\BE218\\IdeaProjects\\x\\src\\animalNames.txt";
-        int lineNum =1;
-        try
-        {
-            FileReader fileReader = new FileReader("C:\\Users\\BE218\\IdeaProjects\\x\\src\\animalNames.txt"); // Replace with your file path
-            BufferedReader bufferedReader = new BufferedReader(fileReader);
-            Scanner sc = new Scanner(System.in);
-            System.out.println("Enter a new hyena name");
-            sc.nextLine();
-
-            String line;
-            while ((line = bufferedReader.readLine()) != null) {
-                System.out.println(line); // Assuming you want to print each line
+        return numOfHyena;
+    }
+    public static void generateName() {
+        String fileName = "C:\\Users\\BE218\\IdeaProjects\\x\\src\\animalNames.txt";
+        names = new ArrayList<>();
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(fileName));
+            String line = reader.readLine();
+            while (line != null) {
+                String[] nameArray = line.split(",");
+                for (String name : nameArray) {
+                    names.add(name);
+                }
+                line = reader.readLine();
             }
-            String userInput = sc.nextLine();
-            lineNum++;
-
-            bufferedReader.close();
+            reader.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        finally{
-            System.out.println("final");
+    }
+    public static String generateRandomName() {
+        Random rand = new Random();
+        return names.get(rand.nextInt(names.size()));
+    }
+    public static void addName(String name) {
+        names.add(name);
+    }
+    public static void displayNames() {
+        System.out.println("Names:");
+        for (String name : names) {
+            System.out.println(name);
         }
     }
+
+
+    // generate unique id method here
+    // req: need to know species and #ofspecie
 }
+//"C:\Users\BE218\IdeaProjects\x\src\animalNames.txt"
+//"C:\Users\BE218\IdeaProjects\x\src\arrivingAnimals.txt"
+    /*
+    generator name method ?
+     */
