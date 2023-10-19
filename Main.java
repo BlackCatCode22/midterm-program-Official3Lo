@@ -114,11 +114,10 @@ public class Main {
         return habitat;
     }
 
-    private static LocalDate genBirthDay(double x, LocalDate y){ // [!]
+    private static LocalDate genBirthDay(double x, LocalDate y){
         double age = x;
         LocalDate bDay = LocalDate.now();
-
-        return bDay;
+        return bDay.minusYears((long) x);
     }
 
     public static void main(String[] args) {
@@ -223,7 +222,7 @@ public class Main {
                 }
 
 
-                if (species.contains("hyena")) { // [!] WORK ON BDAY
+                if (species.contains("hyena")) {
                     // create a hyena with what we have so far.
                     Hyena myNewHyena = new Hyena("HYXX","a name", animalBirthDate, animalColor, animalGender,
                             animalWeight,animalFrom,animalArrivalDate);
