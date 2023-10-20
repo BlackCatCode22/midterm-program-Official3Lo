@@ -116,7 +116,7 @@ public class Main {
 
     private static LocalDate genBirthDay(double x, LocalDate y){
         double age = x;
-        LocalDate bDay = LocalDate.now();
+        LocalDate bDay = y;
         return bDay.minusYears((long) x);
     }
 
