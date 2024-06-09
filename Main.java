@@ -1,3 +1,7 @@
+/* Zoo Program Patch Notes: 6-9-24
+//Do not forget to adjust file path for animalNames and arrivingAnimals text file in order for code to run properly! -Sit
+ */
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -10,8 +14,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
-
-// Zoo Program Patch Notes: 10-18-23 [!] last update before code presentation on Oct 19 at 10:15 AM
 
 public class Main {
 
@@ -114,10 +116,11 @@ public class Main {
         return habitat;
     }
 
-    private static LocalDate genBirthDay(double x, LocalDate y){
+    private static LocalDate genBirthDay(double x, LocalDate y){ // [!]
         double age = x;
-        LocalDate bDay = y;
-        return bDay.minusYears((long) x);
+        LocalDate bDay = LocalDate.now();
+
+        return bDay;
     }
 
     public static void main(String[] args) {
@@ -139,7 +142,7 @@ public class Main {
         ArrayList<Bear> bearArrayList = new ArrayList<>();
 
         // Open a csv file using the split() method on a string object
-        String path = "C:\\Users\\BE218\\IdeaProjects\\untitled\\src\\arrivingAnimals.txt";
+        String path = "C:\\Users\\ericl\\IdeaProjects\\Sit_Zoo\\src\\arrivingAnimals.txt"; //replace with your file path of the file
         String myFileLine = "";
 
         // Variables for constructing animal objects.
@@ -222,7 +225,7 @@ public class Main {
                 }
 
 
-                if (species.contains("hyena")) {
+                if (species.contains("hyena")) { // [!] WORK ON BDAY
                     // create a hyena with what we have so far.
                     Hyena myNewHyena = new Hyena("HYXX","a name", animalBirthDate, animalColor, animalGender,
                             animalWeight,animalFrom,animalArrivalDate);
